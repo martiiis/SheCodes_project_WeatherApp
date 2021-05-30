@@ -147,7 +147,7 @@ hr {
 }
 
 .coded {
-  padding-bottom: 20px;
+  padding-bottom: 5px;
   font-family: monospace;
   text-align: center;
   font-size: 17px;
@@ -177,8 +177,10 @@ hr {
   font-weight: bolder;
 }
 
-small {
-  color: #000000;
+.open-source {
+  color: #333333;
   text-align: center;
   text-decoration: none;
+  display: block;
+  margin: 0px auto 20px;
 }
