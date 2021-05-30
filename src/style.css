@@ -66,9 +66,26 @@ hr {
   color: #49b47e;
   width: 85%;
 }
-.change-system {
+.current-temperature .active {
+  color: rgb(0, 0, 0);
+}
+
+#fahrenheit-link,
+#celsius-link {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  cursor: pointer;
   font-weight: bold;
 }
+
+#fahrenheit-link:hover,
+#celsius-link:hover {
+  color: #49b47e;
+  transition: all 200ms ease-in-out;
+  text-decoration: none;
+  font-weight: bold;
+}
+
 .min-max {
   padding-bottom: 20px;
 }

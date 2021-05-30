@@ -66,6 +66,8 @@ function showTemperature(response) {
   currentWindSpeed = (currentWindSpeed * 60 * 60) / 1000;
   currentWindSpeed = Math.round(currentWindSpeed);
   windSpeed.innerHTML = `${currentWindSpeed}m/s`;
+
+  celsiusTemperature = response.data.main.temp;
 }
 
 //display city searched
@@ -108,14 +110,17 @@ buttonLocation.addEventListener("click", showCurrentLocation);
 //celsius & Fahrenheit
 function convertToFahrenheit(event) {
   event.preventDefault();
-  let temperatureUnit = document.querySelector(".current-temperature");
-  temperatureUnit.innerHTML = 69;
+  let temperature = document.querySelector(".current-temperature");
+  let fTemp = (celsiusTemperature * 9) / 5 + 32;
+  temperature.innerHTML = Math.round(fTemp);
 }
 function convertToCelsius(event) {
   event.preventDefault();
-  let temperatureUnit = document.querySelector(".current-temperature");
-  temperatureUnit.innerHTML = 21;
+  let temperature = document.querySelector(".current-temperature");
+  temperature.innerHTML = Math.round(celsiusTemperature);
 }
+
+let celsiusTemperature = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
