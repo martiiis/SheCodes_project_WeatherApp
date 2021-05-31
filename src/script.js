@@ -56,18 +56,20 @@ function showTemperature(response) {
   let maxTemp = document.querySelector("#maxtemp");
   maxTemp.innerHTML = `${maxTemperature}ºC`;
 
-  let rain = document.querySelector("#rain");
+  let rain = document.querySelector("#skies");
   rain.innerHTML = `${response.data.weather[0].description}`;
 
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = `${currentHumidity} %`;
 
   let windSpeed = document.querySelector("#windSpeed");
-  currentWindSpeed = (currentWindSpeed * 60 * 60) / 1000;
-  currentWindSpeed = Math.round(currentWindSpeed);
-  windSpeed.innerHTML = `${currentWindSpeed}m/s`;
+  currentWindSpeed = Math.round(3.6 * response.data.wind.speed);
+  windSpeed.innerHTML = `${currentWindSpeed} mph`;
 
   celsiusTemperature = response.data.main.temp;
+  document.querySelector("#date").innerHTML = formatDate(
+    response.data.dt * 1000
+  );
 }
 
 //display city searched
