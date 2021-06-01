@@ -39,6 +39,7 @@ let currentMonth = months[now.getMonth()];
 currentTime.innerHTML = `${currentDay}, ${currentMonth} ${date} | ${hours}:${minutes}`;
 
 function showTemperature(response) {
+  console.log(response.data);
   let city = document.querySelector("h2");
   city.innerHTML = response.data.name;
 
@@ -68,8 +69,11 @@ function showTemperature(response) {
 
   celsiusTemperature = response.data.main.temp;
   document.querySelector("#date").innerHTML = formatDate(
-    response.data.dt * 1000
-  );
+    response.data.dt * 1000);
+  
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute("scr", `src/Images/${response.data.weather[0].main}.png`);
+  iconElement.setAttribute("alt", response.data.weather[0].main);
 }
 
 //display city searched

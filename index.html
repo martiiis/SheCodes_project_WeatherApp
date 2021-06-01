@@ -28,7 +28,7 @@
   <body>
     <h1>What's the weather like?</h1>
     <div class="container-fluid">
-      <img src="images/header.jpg" alt="icons" class="image-header" />
+      <img src="images/header.png" alt="icons" class="image-header" />
       <div class="row">
         <div class="col-6">
           <form id="search-form">
@@ -66,10 +66,11 @@
           <hr />
           <br />
           <img
-            src="images/suncloud.jpg"
+            src="images/suncloud.png"
             alt="cloud"
             width="50%"
             class="current-time-image"
+            id="icon"
           />
           <div class="container-fluid-details">
             <div class="row">
@@ -93,85 +94,97 @@
           <h2>...</h2>
           <hr />
           <p class="current-time"></p>
-          <div class="container-fluid-forecast">
+          <div class="weather-forecast" id="forecast">
             <div class="row forecast-row1">
               <div class="col forecast">
-                <div class="col forecast-days">Mon</div>
+                <div class="col weather-forecast-date">Mon</div>
                 <div class="col forecast-icon">
                   <img
-                    src="images/cloud-sm.jpg"
+                    src="images/cloud.png"
                     alt="cloud"
                     class="forecast-image"
+                    id="icon"
                   />
                   <div class="col forecast-degrees">
-                    <strong class="forecast-degrees">-º</strong> /-º
+                    <span class="forecast-degrees-max">29º/</span> 
+                    <span class="forecast-degrees-min">13º</span>
                   </div>
                 </div>
               </div>
               <div class="col forecast">
-                <div class="col forecast-days">Tue</div>
+                <div class="col weather-forecast-date">Tue</div>
                 <div class="col forecast-icon">
                   <img
-                    src="images/rain-sm.jpg"
+                    src="images/rain-sm.png"
                     alt="cloud"
                     class="forecast-image"
+                    id="icon"
                   />
                   <div class="col forecast-degrees">
-                    <strong class="forecast-degrees">-º</strong> /-º
+                    <span class="forecast-degrees-max">º</span> /
+                    <span class="forecast-degrees-min">º</span>
                   </div>
                 </div>
               </div>
               <div class="col forecast">
-                <div class="col forecast-days">Wed</div>
+                <div class="col weather-forecast-date">Wed</div>
                 <div class="col forecast-icon">
                   <img
-                    src="images/sun-sm.jpg"
+                    src="images/sun-sm.png"
                     alt="cloud"
                     class="forecast-image"
+                    id="icon"
                   />
                   <div class="col forecast-degrees">
-                    <strong class="forecast-degrees">-º</strong> /-º
+                    <span class="forecast-degrees-max">º</span> /
+                    <span class="forecast-degrees-min">º</span>
                   </div>
                 </div>
               </div>
             </div>
             <div class="row forecast-row2">
               <div class="col forecast">
-                <div class="col forecast-days">Thu</div>
+                <div class="col weather-forecast-date">Thu</div>
                 <div class="col forecast-icon">
                   <img
-                    src="images/suncloud.jpg"
+                    src="images/suncloud.png"
                     alt="cloud"
                     class="forecast-image"
+                    id="icon"
                   />
                   <div class="col forecast-degrees">
-                    <strong class="forecast-degrees">-º</strong> /-º
+                    <span class="forecast-degrees-max">º</span> /
+                    <span class="forecast-degrees-min">º</span>
                   </div>
                 </div>
               </div>
               <div class="col forecast">
-                <div class="col forecast-days">Fri</div>
+                <div class="col weather-forecast-date">Fri</div>
                 <div class="col forecast-icon">
                   <img
-                    src="images/sun-sm.jpg"
+                    src="images/sun-sm.png"
                     alt="cloud"
                     class="forecast-image"
+                    id="icon"
                   />
                   <div class="col forecast-degrees">
-                    <strong class="forecast-degrees">-º</strong> /-º
+                    <span class="forecast-degrees-max">º</span> /
+                    <span class="forecast-degrees-min">º</span>
                   </div>
                 </div>
               </div>
               <div class="col forecast">
-                <div class="col forecast-days">Sat</div>
+                <div class="col weather-forecast-date">Sat</div>
                 <div class="col forecast-icon">
                   <img
-                    src="images/cloud-sm.jpg"
+                    src="images/cloud.png"
                     alt="cloud"
                     class="forecast-image"
+                    id="icon"
                   />
                   <div class="col forecast-degrees">
-                    <strong class="forecast-degrees">-º</strong> /-º
+                    <span class="forecast-degrees-max">29º</span> /
+                    <span class="forecast-degrees-min">13º</span>
                   </div>
                 </div>
               </div>
