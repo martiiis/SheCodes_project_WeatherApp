@@ -118,7 +118,7 @@ hr {
   text-align: center;
 }
 
-.current-time {
+#current-time {
   padding: 5px;
   font-size: 20px;
 }
