@@ -39,25 +39,26 @@ function formatDate(timestamp) {
   return `${day} ${dateNumber}, ${month} | ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  let forecastInfo = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
-  let days = ["Sun", "Mon", "Tue", "Thu", "Fri", "Sat"];
 
   let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
+  forecastInfo.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `
         <div class="col-6">
-          <div class="weather-forecast-date">${day}</div>
+          <div class="weather-forecast-date">${forecastDay.dt}</div>
           <img
-            src="http://openweathermap.org/img/wn/50d@2x.png"
+            src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
             alt=""
             width="42"
           />
           <div class="weather-forecast-temperatures">
-            <span class="weather-forecast-temperature-max"> 18° </span> ~
-            <span class="weather-forecast-temperature-min"> 12° </span>
+            <span class="weather-forecast-temperature-max"> ${forecastDay.temp.max}° </span> ~
+            <span class="weather-forecast-temperature-min"> ${forecastDay.temp.min}° </span>
           </div>
           <hr />
         </div>
@@ -66,6 +67,12 @@ function displayForecast() {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "428e65277f7b782b50f4593bfe33aeb5";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=${apiKey}`;
+  axion.get(apiUrl).then(displayForecast);
 }
 
 function displayTemperature(response) {
@@ -87,7 +94,8 @@ function displayTemperature(response) {
   minTemp.innerHTML = Math.round(response.data.main.temp_min);
   maxTemp.innerHTML = Math.round(response.data.main.temp_max);
 
-  displayForecast();
+  displayForecast(response.data.daily);
+  getForecast(response.data.coord);
 }
 
 function search(city) {
