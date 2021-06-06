@@ -91,11 +91,11 @@ hr {
   font-size: 16px;
 }
 .degreesSymbol {
-  font-size: 14px;
+  font-size: 12px;
 }
 .degreesSymbolMin {
   color: #5f6363;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 #mintemp {
@@ -184,7 +184,7 @@ hr {
   color: #000;
 }
 .forecast-degrees {
-  font-size: 14px;
+  font-size: 1px;
   color: #0000;
 }
 
