@@ -1,10 +1,8 @@
 /** @format */
 function formatDate(timestamp) {
   let date = new Date(timestamp);
-  let day = date.getDay();
-  let month = date.getMonth();
+  let dateNumber = date.getDate();
   let hours = date.getHours();
-  let minutes = date.getMinutes();
   if (hours < 10) {
     hours = `0${hours};`;
   }
@@ -12,7 +10,15 @@ function formatDate(timestamp) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  let days = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"];
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
   let day = days[date.getDay()];
   let months = [
     "Jan",
@@ -30,7 +36,7 @@ function formatDate(timestamp) {
   ];
   let month = months[date.getMonth()];
 
-  return `${day}, ${month} | ${hours}:${minutes}`;
+  return `${day} ${dateNumber}, ${month} | ${hours}:${minutes}`;
 }
 
 function displayTemperature(response) {
@@ -49,7 +55,18 @@ function displayTemperature(response) {
   date.innerHTML = formatDate(response.data.dt * 1000);
 }
 
-let apiKey = "428e65277f7b782b50f4593bfe33aeb5";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Madrid&units=metric&appid=${apiKey}`;
+function search(city) {
+  let apiKey = "428e65277f7b782b50f4593bfe33aeb5";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
 
-axios.get(apiUrl).then(displayTemperature);
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function searchSubmit(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#enter-city");
+  search(cityInput.value);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", searchSubmit);
