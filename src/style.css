@@ -15,11 +15,6 @@ h1 {
   color: #070808;
   width: 95%;
 }
-h2 {
-  font-family: "Neucha", cursive;
-  padding: 2px auto;
-  font-size: 45px;
-}
 hr {
   width: 35%;
   display: block;
@@ -27,6 +22,11 @@ hr {
   color: #21aba5;
 }
 
+#city {
+  font-family: "Neucha", cursive;
+  padding: 2px auto;
+  font-size: 45px;
+}
 .container-fluid {
   text-align: center;
   font-family: "Neucha", cursive;
@@ -60,13 +60,13 @@ hr {
   background-color: #45eba5;
 }
 
-.current-temperature {
+#current-temperature {
   padding-top: 10px;
   font-size: 55px;
   color: #49b47e;
   width: 85%;
 }
-.current-temperature .active {
+#current-temperature .active {
   color: rgb(0, 0, 0);
 }
 
@@ -89,6 +89,14 @@ hr {
 .min-max {
   padding-bottom: 20px;
 }
+#weather-description {
+  display: block;
+}
+
+#weather-description::first-letter {
+  text-transform: uppercase;
+}
+
 .current-time-image {
   padding: 0 auto;
 }

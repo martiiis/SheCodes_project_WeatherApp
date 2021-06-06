@@ -52,7 +52,7 @@
             />
           </form>
           <br />
-          <span class="current-temperature"></span>
+          <span id="current-temperature"></span>
           <span class="units">
             <a href="#" id="celsius-link" class="active">ºC</a> |
             <a href="#" id="fahrenheit-link">ºF</a>
@@ -62,7 +62,7 @@
             Max <span id="maxtemp">ºC</span> | Min <span id="mintemp">ºC</span>
           </span>
           <br />
-          <span class="col weather-values" id="skies"></span>
+          <span class="col weather-values" id="weather-description"></span>
           <hr />
           <br />
           <img
@@ -78,22 +78,24 @@
                 <i class="fas fa-tint"></i>
                 <br />
                 <strong class="weather-details">Humidity</strong>
-                <div class="col weather-values" id="humidity"></div> 
+                <div class="col weather-values" id="humidity"></div>
+                <span>%</span>
               </div>
               <div class="col">
                 <i class="fas fa-wind"></i>
                 <br />
                 <strong class="weather-details"> Wind </strong>
                 <div class="col weather-values" id="windSpeed"></div>
+                <span>km/h</span>
               </div>
             </div>
           </div>
         </div>
 
         <div class="col-6">
-          <h2>...</h2>
+          <h2 id="city">-</h2>
           <hr />
-          <p id="current-time"></p>
+          <span id="current-time"></span>
           <div class="weather-forecast" id="forecast">
             <div class="row forecast-row1">
               <div class="col forecast">
@@ -106,7 +108,7 @@
                     id="icon"
                   />
                   <div class="col forecast-degrees">
-                    <span class="forecast-degrees-max">29º/</span> 
+                    <span class="forecast-degrees-max">29º/</span>
                     <span class="forecast-degrees-min">13º</span>
                   </div>
                 </div>
