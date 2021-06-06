@@ -46,6 +46,8 @@ function displayTemperature(response) {
   let humidity = document.querySelector("#humidity");
   let windSpeed = document.querySelector("#windSpeed");
   let date = document.querySelector("#current-time");
+  let minTemp = document.querySelector("#mintemp");
+  let maxTemp = document.querySelector("#maxtemp");
 
   temperature.innerHTML = Math.round(response.data.main.temp);
   city.innerHTML = response.data.name;
@@ -53,6 +55,8 @@ function displayTemperature(response) {
   humidity.innerHTML = response.data.main.humidity;
   windSpeed.innerHTML = Math.round(response.data.wind.speed);
   date.innerHTML = formatDate(response.data.dt * 1000);
+  minTemp.innerHTML = Math.round(response.data.main.temp_min);
+  maxTemp.innerHTML = Math.round(response.data.main.temp_max);
 }
 
 function search(city) {
@@ -61,7 +65,6 @@ function search(city) {
 
   axios.get(apiUrl).then(displayTemperature);
 }
-
 function searchSubmit(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#enter-city");

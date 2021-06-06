@@ -88,9 +88,25 @@ hr {
 
 .min-max {
   padding-bottom: 20px;
+  font-size: 16px;
 }
+.degreesSymbol {
+  font-size: 14px;
+}
+.degreesSymbolMin {
+  color: #5f6363;
+  font-size: 14px;
+}
+
+#mintemp {
+  font-size: 16px;
+  color: #5f6363;
+}
+
 #weather-description {
   display: block;
+  font-style: italic;
+  padding: 0 auto;
 }
 
 #weather-description::first-letter {
@@ -128,7 +144,7 @@ hr {
 
 #current-time {
   padding: 5px;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .weather-forecast {
