@@ -52,8 +52,8 @@ function displayForecast(response) {
         <div class="col-6">
           <div class="weather-forecast-date">${forecastDay.dt}</div>
           <img
-            src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
-            alt=""
+            src="images/${forecastDay.weather[0].icon}.png"
+            alt=".."
             width="42"
           />
           <div class="weather-forecast-temperatures">
@@ -84,7 +84,8 @@ function displayTemperature(response) {
   let date = document.querySelector("#current-time");
   let minTemp = document.querySelector("#mintemp");
   let maxTemp = document.querySelector("#maxtemp");
-
+  let icon = document.querySelector("#icon");
+  
   temperature.innerHTML = Math.round(response.data.main.temp);
   city.innerHTML = response.data.name;
   description.innerHTML = response.data.weather[0].description;
@@ -93,7 +94,9 @@ function displayTemperature(response) {
   date.innerHTML = formatDate(response.data.dt * 1000);
   minTemp.innerHTML = Math.round(response.data.main.temp_min);
   maxTemp.innerHTML = Math.round(response.data.main.temp_max);
-
+  icon.setAttribute("src", `images/${response.data.weather[0].icon}.png`);
+  icon.setAttribute("alt"`response.data.weather[0].description`);
+  
   displayForecast(response.data.daily);
   getForecast(response.data.coord);
 }
@@ -101,12 +104,12 @@ function displayTemperature(response) {
 function search(city) {
   let apiKey = "428e65277f7b782b50f4593bfe33aeb5";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-
   axios.get(apiUrl).then(displayTemperature);
 }
 function searchSubmit(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#enter-city");
+  //let city = "Tel Aviv";
   search(cityInput.value);
 }
 
