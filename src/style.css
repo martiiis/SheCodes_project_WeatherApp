@@ -92,12 +92,15 @@ hr {
 }
 .degreesSymbol {
   font-size: 14px;
+  font-weight: bolder;
 }
 .degreesSymbolMin {
   color: #5f6363;
   font-size: 14px;
 }
-
+#maxtemp{
+  font-weight: bolder;
+}
 #mintemp {
   font-size: 16px;
   color: #5f6363;
@@ -160,14 +163,21 @@ hr {
   border-radius: 20px;
   box-shadow: 5px 5px 5px #0ea0a54d;
 }
-.forecast-row1,
-.forecast-row2 {
-  text-align: center;
-  color: black;
-  font-size: 20px;
-  padding: 20px auto 60px auto;
-  font-weight: bold;
+.weather-forecast-date{
+font-weight: bolder;
+font-size: 20px;
+color:#1d566e;
 }
+
+.weather-forecast-temperature-max{
+font-weight: bolder;
+font-size: 16px;
+}
+.weather-forecast-temperature-min{
+  font-size: 16px;
+  color: #5f6363;
+}
+
 
 .weather-forecast-date {
   text-align: center;
