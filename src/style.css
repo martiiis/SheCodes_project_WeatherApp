@@ -87,10 +87,10 @@ hr {
 }
 #maxtemp {
   font-weight: bolder;
-  font-size: 18px;
+  font-size: 22px;
 }
 #mintemp {
-  font-size: 18px;
+  font-size: 22px;
   color: #5f6363;
 }
 
@@ -105,7 +105,7 @@ hr {
 }
 
 .current-time-image {
-  padding: 0 auto;
+  padding-top: 10px;
 }
 .container-fluid-details {
   text-align: center;
@@ -153,8 +153,12 @@ hr {
 }
 .weather-forecast-date {
   font-weight: bolder;
-  font-size: 20px;
+  font-size: 22px;
   color: #1d566e;
+}
+
+.weather-forecast-temperatures {
+  padding-top: 10px;
 }
 
 .weather-forecast-temperature-max {
