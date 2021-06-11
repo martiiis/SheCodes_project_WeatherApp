@@ -91,11 +91,11 @@ hr {
   font-size: 16px;
 }
 .degreesSymbol {
-  font-size: 12px;
+  font-size: 14px;
 }
 .degreesSymbolMin {
   color: #5f6363;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 #mintemp {
@@ -106,7 +106,7 @@ hr {
 #weather-description {
   display: block;
   font-style: italic;
-  padding: 0 auto;
+  padding: 0px ;
 }
 
 #weather-description::first-letter {
@@ -184,7 +184,7 @@ hr {
   color: #000;
 }
 .forecast-degrees {
-  font-size: 1px;
+  font-size: 14px;
   color: #0000;
 }
 

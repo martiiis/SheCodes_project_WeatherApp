@@ -85,7 +85,7 @@ function displayTemperature(response) {
   let minTemp = document.querySelector("#mintemp");
   let maxTemp = document.querySelector("#maxtemp");
   let icon = document.querySelector("#icon");
-  
+
   temperature.innerHTML = Math.round(response.data.main.temp);
   city.innerHTML = response.data.name;
   description.innerHTML = response.data.weather[0].description;
@@ -95,8 +95,8 @@ function displayTemperature(response) {
   minTemp.innerHTML = Math.round(response.data.main.temp_min);
   maxTemp.innerHTML = Math.round(response.data.main.temp_max);
   icon.setAttribute("src", `images/${response.data.weather[0].icon}.png`);
-  icon.setAttribute("alt"`response.data.weather[0].description`);
-  
+  icon.setAttribute("alt",`response.data.weather[0].description`);
+
   displayForecast(response.data.daily);
   getForecast(response.data.coord);
 }
@@ -113,5 +113,24 @@ function searchSubmit(event) {
   search(cityInput.value);
 }
 
+function showPositionTemp(position) {
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let apiKey = "428e65277f7b782b50f4593bfe33aeb5";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+
+  axios.get(apiUrl).then(displayTemperature);
+}
+function showCurrentLocation(event) {
+  event.preventDefault();
+
+  navigator.geolocation.getCurrentPosition(showPositionTemp);
+}
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchSubmit);
+
+let currentLocation = document.querySelector("#current-location");
+currentLocation.addEventListener("click", showCurrentLocation);
+
+search("Tel Aviv");
