@@ -43,6 +43,7 @@ function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
   return days[day];
 }
 
@@ -63,6 +64,7 @@ function displayForecast(response) {
             src="images/${forecastDay.weather[0].icon}.png"
             alt=""
             width="42px"
+            id="icon"
           />
           <div class="weather-forecast-temperatures">
             <span class="weather-forecast-temperature-max"> ${Math.round(
@@ -80,15 +82,12 @@ function displayForecast(response) {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "428e65277f7b782b50f4593bfe33aeb5";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
-  
 }
 
 function displayTemperature(response) {
@@ -147,4 +146,4 @@ form.addEventListener("submit", searchSubmit);
 let currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", showCurrentLocation);
 
-search("London");
+search("Madrid");
