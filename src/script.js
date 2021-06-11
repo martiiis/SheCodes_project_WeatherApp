@@ -4,7 +4,7 @@ function formatDate(timestamp) {
   let dateNumber = date.getDate();
   let hours = date.getHours();
   if (hours < 10) {
-    hours = `0${hours};`;
+    hours = `0${hours}`;
   }
   let minutes = date.getMinutes();
   if (minutes < 10) {
@@ -39,40 +39,56 @@ function formatDate(timestamp) {
   return `${day} ${dateNumber}, ${month} | ${hours}:${minutes}`;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 function displayForecast(response) {
-  let forecastInfo = response.data.daily;
+  let forecast = response.data.daily;
 
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  forecastInfo.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
         <div class="col-6">
-          <div class="weather-forecast-date">${forecastDay.dt}</div>
+          <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
           <img
             src="images/${forecastDay.weather[0].icon}.png"
-            alt=".."
-            width="42"
+            alt=""
+            width="42px"
           />
           <div class="weather-forecast-temperatures">
-            <span class="weather-forecast-temperature-max"> ${forecastDay.temp.max}° </span> ~
-            <span class="weather-forecast-temperature-min"> ${forecastDay.temp.min}° </span>
+            <span class="weather-forecast-temperature-max"> ${Math.round(
+              forecastDay.temp.max
+            )}° </span> ~
+            <span class="weather-forecast-temperature-min"> ${Math.round(
+              forecastDay.temp.min
+            )}° </span>
           </div>
           <hr />
         </div>
   `;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+  
 }
 
 function getForecast(coordinates) {
+  console.log(coordinates);
   let apiKey = "428e65277f7b782b50f4593bfe33aeb5";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=${apiKey}`;
-  axion.get(apiUrl).then(displayForecast);
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+  
 }
 
 function displayTemperature(response) {
@@ -95,9 +111,8 @@ function displayTemperature(response) {
   minTemp.innerHTML = Math.round(response.data.main.temp_min);
   maxTemp.innerHTML = Math.round(response.data.main.temp_max);
   icon.setAttribute("src", `images/${response.data.weather[0].icon}.png`);
-  icon.setAttribute("alt",`response.data.weather[0].description`);
+  icon.setAttribute("alt", response.data.weather[0].description);
 
-  displayForecast(response.data.daily);
   getForecast(response.data.coord);
 }
 
@@ -106,10 +121,10 @@ function search(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(displayTemperature);
 }
+
 function searchSubmit(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#enter-city");
-  //let city = "Tel Aviv";
   search(cityInput.value);
 }
 
@@ -132,4 +147,4 @@ form.addEventListener("submit", searchSubmit);
 let currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", showCurrentLocation);
 
-search("Tel Aviv");
+search("London");
