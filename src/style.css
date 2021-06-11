@@ -141,7 +141,9 @@ hr {
   font-size: 17px;
   text-align: center;
 }
-
+.lastUpdated{
+  font-weight: bold;
+}
 #current-time {
   padding: 5px;
   font-size: 16px;

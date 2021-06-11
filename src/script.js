@@ -123,7 +123,6 @@ function showPositionTemp(position) {
 }
 function showCurrentLocation(event) {
   event.preventDefault();
-
   navigator.geolocation.getCurrentPosition(showPositionTemp);
 }
 
