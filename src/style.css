@@ -195,8 +195,9 @@ hr {
   padding-bottom: 5px;
   font-family: monospace;
   text-align: center;
-  font-size: 17px;
+  font-size: 15px;
   color: rgba(0, 0, 0, 0.733);
+  font-family: "Neucha", cursive;
 }
 .contact {
   color: #000000;
@@ -207,25 +208,46 @@ hr {
   color: rgb(0, 0, 0);
   text-align: center;
   text-decoration: none;
+  font-family: "Neucha", cursive;
 }
 
 .contact:hover {
   color: #ffff;
   transition: all 200ms ease-in-out;
-  text-decoration: none;
+  text-decoration: dotted;
   font-weight: bolder;
 }
 .shecodes:hover {
   color: #fff;
   transition: all 200ms ease-in-out;
-  text-decoration: none;
+  text-decoration: dotted;
   font-weight: bolder;
 }
 
 .open-source {
-  color: #333333;
+  color: #000;
+  font-size: 13px;
   text-align: center;
   text-decoration: none;
   display: block;
   margin: 0px auto 20px;
+  opacity: 0.8;
+  font-family: "Neucha", cursive;
+}
+.github {
+  font-weight: bold;
+  color: #000;
+  font-family: "Neucha", cursive;
+  text-decoration: none;
+  opacity: 0.8;
+}
+.fa-linkedin,
+.fa-github {
+  color: #000000;
+  font-size: 16px;
+}
+.github:hover {
+  color: #fff;
+  transition: all 200ms ease-in-out;
+  text-decoration: underline;
 }
