@@ -61,35 +61,22 @@ hr {
 }
 
 #current-temperature {
-  padding-top: 10px;
   font-size: 55px;
   color: #49b47e;
-  width: 85%;
 }
 #current-temperature .active {
   color: rgb(0, 0, 0);
 }
 
-#fahrenheit-link,
 #celsius-link {
   color: rgb(0, 0, 0);
   text-decoration: none;
   cursor: pointer;
   font-weight: bold;
+  font-size: 25px;
+  opacity: 0.8;
 }
 
-#fahrenheit-link:hover,
-#celsius-link:hover {
-  color: #49b47e;
-  transition: all 200ms ease-in-out;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.min-max {
-  padding-bottom: 20px;
-  font-size: 16px;
-}
 .degreesSymbol {
   font-size: 14px;
   font-weight: bolder;
@@ -98,18 +85,19 @@ hr {
   color: #5f6363;
   font-size: 14px;
 }
-#maxtemp{
+#maxtemp {
   font-weight: bolder;
+  font-size: 18px;
 }
 #mintemp {
-  font-size: 16px;
+  font-size: 18px;
   color: #5f6363;
 }
 
 #weather-description {
   display: block;
   font-style: italic;
-  padding: 0px ;
+  padding: 0px;
 }
 
 #weather-description::first-letter {
@@ -144,7 +132,7 @@ hr {
   font-size: 17px;
   text-align: center;
 }
-.lastUpdated{
+.lastUpdated {
   font-weight: bold;
 }
 #current-time {
@@ -163,21 +151,20 @@ hr {
   border-radius: 20px;
   box-shadow: 5px 5px 5px #0ea0a54d;
 }
-.weather-forecast-date{
-font-weight: bolder;
-font-size: 20px;
-color:#1d566e;
+.weather-forecast-date {
+  font-weight: bolder;
+  font-size: 20px;
+  color: #1d566e;
 }
 
-.weather-forecast-temperature-max{
-font-weight: bolder;
-font-size: 16px;
+.weather-forecast-temperature-max {
+  font-weight: bolder;
+  font-size: 16px;
 }
-.weather-forecast-temperature-min{
+.weather-forecast-temperature-min {
   font-size: 16px;
   color: #5f6363;
 }
-
 
 .weather-forecast-date {
   text-align: center;
