@@ -25,12 +25,14 @@
     <link rel="stylesheet" href="src/style.css" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
+
   <body>
     <h1>What's the weather like?</h1>
     <div class="container-fluid">
       <img src="images/header.png" alt="icons" class="image-header" />
       <div class="row">
         <div class="col-6">
+          <!-- added to React -->
           <form id="search-form">
             <input
               type="search"
@@ -51,7 +53,9 @@
               class="btn btn-info"
             />
           </form>
+
           <br />
+          <!-- added to React -->
           <span id="current-temperature"></span>
           <span class="units">
             <a href="#" id="celsius-link" class="active">ºC</a>
@@ -71,6 +75,7 @@
             class="current-time-image"
             id="icon"
           />
+          <!-- added to React -->
           <div class="container-fluid-details">
             <div class="row">
               <div class="col">
@@ -94,7 +99,6 @@
             </div>
           </div>
         </div>
-
         <div class="col-6">
           <h2 id="city"></h2>
           <hr />
@@ -127,7 +131,7 @@
       <a
         href="https://github.com/martiiis/SheCodes-Plus-project"
         target="_blank"
-        class = "github"
+        class="github"
         >Open-source code</a
       >
       by Marta Pineda

@@ -1,4 +1,5 @@
 /** @format */
+/**React::App**/
 body {
   background: linear-gradient(
     109.6deg,
@@ -21,12 +22,6 @@ hr {
   margin: 10px auto 10px auto;
   color: #21aba5;
 }
-
-#city {
-  font-family: "Neucha", cursive;
-  padding: 2px auto;
-  font-size: 45px;
-}
 .container-fluid {
   text-align: center;
   font-family: "Neucha", cursive;
@@ -41,6 +36,7 @@ hr {
   width: 50%;
 }
 
+/**React::Search**/
 .enter-city {
   padding: 3px 10px;
   width: 50%;
@@ -48,7 +44,6 @@ hr {
   font-size: 15px;
   margin-bottom: 10px;
 }
-
 .btn-info {
   border: none;
   padding: 6px 10px;
@@ -60,6 +55,7 @@ hr {
   background-color: #45eba5;
 }
 
+/**React::WeatherData**/
 #current-temperature {
   font-size: 55px;
   color: #49b47e;
@@ -67,7 +63,6 @@ hr {
 #current-temperature .active {
   color: rgb(0, 0, 0);
 }
-
 #celsius-link {
   color: rgb(0, 0, 0);
   text-decoration: none;
@@ -76,7 +71,6 @@ hr {
   font-size: 25px;
   opacity: 0.8;
 }
-
 .degreesSymbol {
   font-size: 14px;
   font-weight: bolder;
@@ -93,20 +87,19 @@ hr {
   font-size: 22px;
   color: #5f6363;
 }
-
 #weather-description {
   display: block;
   font-style: italic;
   padding: 0px;
 }
-
 #weather-description::first-letter {
   text-transform: uppercase;
 }
-
 .current-time-image {
   padding-top: 10px;
 }
+
+/**React::Details**/
 .container-fluid-details {
   text-align: center;
   display: block;
@@ -132,6 +125,13 @@ hr {
   font-size: 17px;
   text-align: center;
 }
+
+/**React:City**/
+#city {
+  font-family: "Neucha", cursive;
+  padding: 2px auto;
+  font-size: 45px;
+}
 .lastUpdated {
   font-weight: bold;
 }
@@ -140,6 +140,7 @@ hr {
   font-size: 16px;
 }
 
+/**React::Forecast**/
 .weather-forecast {
   text-align: center;
   font-family: "Neucha", cursive;
@@ -190,7 +191,7 @@ hr {
   font-size: 14px;
   color: #0000;
 }
-
+/**React::Footer**/
 .coded {
   padding-bottom: 5px;
   font-family: monospace;
